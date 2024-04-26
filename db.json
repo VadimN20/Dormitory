@@ -1,0 +1,381 @@
+{
+  "floors": [
+    {
+      "id": "1",
+      "floor": 1,
+      "img": "./images/floors/FirstFloor.svg",
+      "rooms": [
+        {
+          "room1": {
+            "countStudent": 2,
+            "student1": "st621813",
+            "student2": ""
+          }
+        },
+        {
+          "room2": {
+            "countStudent": 3,
+            "student1": "st621813",
+            "student2": "",
+            "student3": "st621814"
+          }
+        }
+      ],
+      "freePlaces": 11
+    },
+    {
+      "id": "2",
+      "floor": 2,
+      "img": "./images/floors/StandartFloor.svg",
+      "rooms": [
+        {
+          "room1": {
+            "countStudent": 2,
+            "student1": "st621813",
+            "student2": ""
+          }
+        },
+        {
+          "room2": {
+            "countStudent": 3,
+            "student1": "st621813",
+            "student2": "",
+            "student3": "st621814"
+          }
+        }
+      ],
+      "freePlaces": 13
+    },
+    {
+      "id": "3",
+      "floor": 3,
+      "img": "./images/floors/StandartFloor.svg",
+      "rooms": [
+        {
+          "room1": {
+            "number": 300,
+            "countStudent": 2,
+            "students": [
+              "st621813",
+              "st621814"
+            ]
+          }
+        },
+        {
+          "room2": {
+            "number": 301,
+            "countStudent": 3,
+            "student1": "st621813",
+            "student2": "",
+            "student3": "st621814"
+          }
+        },
+        {
+          "room3": {
+            "number": 302,
+            "countStudent": 3,
+            "student1": "st621813",
+            "student2": "",
+            "student3": "st621814"
+          }
+        },
+        {
+          "room4": {
+            "number": 303,
+            "countStudent": 3,
+            "student1": "st621813",
+            "student2": "",
+            "student3": "st621814"
+          }
+        },
+        {
+          "room5": {
+            "number": 304,
+            "countStudent": 3,
+            "student1": "st621813",
+            "student2": "",
+            "student3": "st621814"
+          }
+        },
+        {
+          "room6": {
+            "number": 305,
+            "countStudent": 3,
+            "student1": "st621813",
+            "student2": "",
+            "student3": "st621814"
+          }
+        },
+        {
+          "room7": {
+            "number": 306,
+            "countStudent": 3,
+            "student1": "st621813",
+            "student2": "",
+            "student3": "st621814"
+          }
+        },
+        {
+          "room8": {
+            "number": 307,
+            "countStudent": 3,
+            "student1": "st621813",
+            "student2": "",
+            "student3": "st621814"
+          }
+        },
+        {
+          "room9": {
+            "number": 308,
+            "countStudent": 3,
+            "student1": "st621813",
+            "student2": "",
+            "student3": "st621814"
+          }
+        },
+        {
+          "room10": {
+            "number": 309,
+            "countStudent": 3,
+            "student1": "st621813",
+            "student2": "",
+            "student3": "st621814"
+          }
+        },
+        {
+          "room11": {
+            "number": 310,
+            "countStudent": 3,
+            "student1": "st621813",
+            "student2": "",
+            "student3": "st621814"
+          }
+        },
+        {
+          "room12": {
+            "number": 311,
+            "countStudent": 3,
+            "student1": "st621813",
+            "student2": "",
+            "student3": "st621814"
+          }
+        },
+        {
+          "room13": {
+            "number": 312,
+            "countStudent": 3,
+            "student1": "st621813",
+            "student2": "",
+            "student3": "st621814"
+          }
+        }
+      ],
+      "freePlaces": 13
+    },
+    {
+      "id": "4",
+      "floor": 4,
+      "img": "./images/floors/StandartFloor.svg",
+      "rooms": [
+        {
+          "room1": {
+            "number": 404,
+            "countStudent": 2,
+            "student1": "st621813",
+            "student2": ""
+          }
+        },
+        {
+          "room2": {
+            "number": 405,
+            "countStudent": 3,
+            "student1": "st621813",
+            "student2": "",
+            "student3": "st621814"
+          }
+        }
+      ],
+      "freePlaces": 13
+    },
+    {
+      "id": "5",
+      "floor": 5,
+      "img": "./images/floors/StandartFloor.svg",
+      "rooms": [
+        {
+          "room1": {
+            "countStudent": 2,
+            "student1": "st621813",
+            "student2": ""
+          }
+        },
+        {
+          "room2": {
+            "countStudent": 3,
+            "student1": "st621813",
+            "student2": "",
+            "student3": "st621814"
+          }
+        }
+      ],
+      "freePlaces": 13
+    },
+    {
+      "id": "6",
+      "floor": 6,
+      "img": "./images/floors/StandartFloor.svg",
+      "rooms": [
+        {
+          "room1": {
+            "countStudent": 2,
+            "student1": "st621813",
+            "student2": ""
+          }
+        },
+        {
+          "room2": {
+            "countStudent": 3,
+            "student1": "st621813",
+            "student2": "",
+            "student3": "st621814"
+          }
+        }
+      ],
+      "freePlaces": 13
+    },
+    {
+      "id": "7",
+      "floor": 7,
+      "img": "./images/floors/StandartFloor.svg",
+      "rooms": [
+        {
+          "room1": {
+            "countStudent": 2,
+            "student1": "st621813",
+            "student2": ""
+          }
+        },
+        {
+          "room2": {
+            "countStudent": 3,
+            "student1": "st621813",
+            "student2": "",
+            "student3": "st621814"
+          }
+        }
+      ],
+      "freePlaces": 13
+    },
+    {
+      "id": "8",
+      "floor": 8,
+      "img": "./images/floors/RoofFloor.svg",
+      "rooms": [
+        {
+          "room1": {
+            "countStudent": 2,
+            "student1": "st621813",
+            "student2": ""
+          }
+        },
+        {
+          "room2": {
+            "countStudent": 3,
+            "student1": "st621813",
+            "student2": "",
+            "student3": "st621814"
+          }
+        }
+      ],
+      "freePlaces": 13
+    },
+    {
+      "id": "3e10",
+      "studentId": "st-6124123",
+      "name": "Vadim",
+      "secondName": "Nifontov",
+      "middleName": "Vycheslavovich"
+    },
+    {
+      "id": "d156",
+      "studentId": "sdf2323",
+      "firstName": "sdf",
+      "lastName": "sdf",
+      "middleName": "sdf"
+    },
+    {
+      "id": "1ee4",
+      "studentId": "asd",
+      "firstName": "ad",
+      "lastName": "asd",
+      "middleName": "asd"
+    },
+    {
+      "id": "a2bb",
+      "login": "st678678",
+      "password": "aasd"
+    },
+    {
+      "id": "5ed2",
+      "password": "123123"
+    },
+    {
+      "id": "d140",
+      "login": "st123123123123",
+      "password": "123123"
+    },
+    {
+      "id": "8651",
+      "password": "8"
+    },
+    {
+      "id": "5de4",
+      "login": "st621813",
+      "password": "8"
+    }
+  ],
+  "st621813": {
+    "accessRights": false,
+    "fio": "Петров Илья Денисович",
+    "photo": "./images/myAccount/PersonalPhoto.jpg",
+    "male": "Муж",
+    "numberPhone": "+7(977)541-61-69",
+    "email": "petrov@mail.ru",
+    "room": {
+      "floor": "3",
+      "number": "307"
+    },
+    "paymentSuccess": true,
+    "documents": {
+      "passport": "6020 636326",
+      "studentIdNumber": "621813"
+    },
+    "password": "11111",
+    "Вещи": {
+      "одеяло": true,
+      "простыня": true,
+      "полотенце": true,
+      "Ничего не брал": false
+    }
+  },
+  "st621814": {
+    "accessRights": false,
+    "fio": "Петрова Ангелина Павлова",
+    "photo": "./images/myAccount/PersonalPhoto.jpg",
+    "male": "Жен",
+    "room": {
+      "floor": "4",
+      "number": "408"
+    },
+    "paymentSuccess": "true",
+    "documents": {
+      "passport": "6021 636327",
+      "studentIdNumber": "621814"
+    },
+    "password": "111111"
+  },
+  "admin": {
+    "accessRights": true,
+    "password": "2222"
+  }
+}
