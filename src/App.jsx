@@ -6,6 +6,9 @@ import { Floor } from "./pages/managmentDormitory/floors/floor/Floor";
 import { CreateUser } from "./pages/managmentDormitory/students/createUser/CreateUser";
 import { Authorization } from "./pages/authorization/Authorization.jsx";
 import { MainPage } from "./pages/mainPage/MainPage.jsx";
+import { Payment } from "./pages/payment/Payment.jsx";
+import { ManagmentStudents } from "./pages/managmentDormitory/students/ManagmentStudents.jsx";
+import { StudentAccount } from "./pages/managmentDormitory/students/listStudents/studentAccount/StudentAccount.jsx";
 
 import { ProtectedRoute } from "./hoc/ProtectedRoute";
 import { AuthProvider } from "./hooks/useAuth.jsx";
@@ -28,9 +31,30 @@ export const App = () => {
               </ProtectedRoute>
             }
           />
-          <Route path="managmentFloors" element={<ManagmentFloors />} />
-          <Route path="managmentFloors/floor" element={<Floor />} />
-          <Route path="managmentFloors/floor/:numFloor" element={<Floor />} />
+          <Route
+            path="managmentFloors"
+            element={
+              <ProtectedRoute>
+                <ManagmentFloors />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="managmentFloors/floor"
+            element={
+              <ProtectedRoute>
+                <Floor />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="managmentFloors/floor/:numFloor"
+            element={
+              <ProtectedRoute>
+                <Floor />
+              </ProtectedRoute>
+            }
+          />
           <Route
             path="notifications"
             element={
@@ -43,7 +67,7 @@ export const App = () => {
             path="managmentStudents"
             element={
               <ProtectedRoute>
-                <CreateUser />
+                <ManagmentStudents />
               </ProtectedRoute>
             }
           />
@@ -56,10 +80,18 @@ export const App = () => {
             }
           />
           <Route
+            path="managmentStudents/student/:student_id"
+            element={
+              <ProtectedRoute>
+                <StudentAccount />
+              </ProtectedRoute>
+            }
+          />
+          <Route
             path="payment"
             element={
               <ProtectedRoute>
-                <h1>Оплата</h1>
+                <Payment />
               </ProtectedRoute>
             }
           />

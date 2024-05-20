@@ -8,7 +8,7 @@
 
 .main_wrap {
   width: 100%;
-  padding-top: 50px;
+  padding-top: 130px;
   padding-bottom: 50px;
   background-color: var(--light);
 }
@@ -33,12 +33,12 @@
   display: flex;
   justify-content: space-around;
   text-align: center;
-  padding: 30px;
+  padding: 20px;
   flex-wrap: wrap;
 }
 
 .map {
-  width: 70%;
+  width: 60%;
   @media (max-width: 1000px) {
     display: none;
   }
@@ -51,32 +51,37 @@
   width: 100%;
   border-radius: 15px;
   box-shadow: 0px 0px 35px -12px rgb(0, 0, 0);
+  position: relative;
 }
 
 .btn_slider {
-  padding-inline: 25%;
+  z-index: 5;
+  position: absolute;
+  width: 100%;
+  bottom: 5px;
   display: flex;
   justify-content: space-around;
 }
 
 .btn_navMap {
-  border: 1px solid black;
+  z-index: 5;
+  padding: 10px;
+  border: 1px solid var(--light);
   border-radius: 5px;
-  padding: 5px;
-  background-color: transparent;
+  background-color: var(--grey);
+  transition: 0.3s;
   &:hover {
-    background-color: red;
+    background-color: var(--light);
+    color: var(--bright);
   }
 }
 
 .btn_navMap_active {
-  border: 1px solid black;
+  z-index: 5;
+  border: 1px solid var(--bright);
   border-radius: 5px;
-  padding: 5px;
-  background-color: #326b9f;
-  &:hover {
-    background-color: red;
-  }
+  padding: 10px;
+  background-color: var(--light);
 }
 
 .map_img_kutuz_left,

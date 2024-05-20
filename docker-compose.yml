@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   frontend:
-    image: "vvnifontov/dormitory:0.0.73"
+    image: "vvnifontov/dormitory:0.0.275"
     build: ./dormitory-app
     ports:
       - "5173:5173"
@@ -9,7 +9,7 @@ services:
       - /dormitory-app/node_modules:/usr/app/node_modules
       - ./dormitory-app:/usr/app
   backend:
-    image: "m00nnnn/myfirstrepository:0.0.64"
+    image: "m00nnnn/myfirstrepository:0.0.125"
     build:
       context: .
     expose:

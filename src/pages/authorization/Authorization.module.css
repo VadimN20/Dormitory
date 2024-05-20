@@ -12,7 +12,7 @@
   color: var(--bright);
   padding: 15px;
   border: 1px solid var(--bright);
-  border-radius: 10px;
+  border-radius: 30px;
   position: absolute;
   font-size: 1.2em;
   top: 20px;
@@ -128,7 +128,7 @@
   height: 40px;
   margin: 0 auto;
   margin-top: 10px;
-  border-radius: 10px;
+  border-radius: 30px;
   border: 1px solid var(--bright);
   outline: none;
   font-size: 1.2rem;

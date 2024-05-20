@@ -1,0 +1,31 @@
+.win_addPhoto {
+  height: 300px;
+  border: 1px solid var(--dark);
+  background-color: var(--light);
+  margin: 10px;
+  border-radius: 15px;
+}
+
+.display_none {
+  display: none;
+}
+
+.drop_area {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.drop_area_active {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  border: 5px dotted var(--dark);
+  border-radius: 15px;
+}

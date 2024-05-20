@@ -1,50 +1,136 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-// import { CountStudents } from "./CountStudents";
+import { useAuth } from "../../../../hooks/useAuth";
+import { FaUserPlus } from "react-icons/fa6";
+import { AddStudent } from "./addStudent/AddStudent";
 
 import styles from "./Floor.module.css";
 
-const URLdataBase = "http://localhost:8080/floors";
+const URLdataBase = "http://localhost:8080/floor/get/";
 
 export const Floor = () => {
+  const { token } = useAuth();
   const { numFloor } = useParams();
-  const [floor, setFloor] = useState([]);
-  const [students, setStudents] = useState();
+  const [floor, setFloor] = useState();
+  const [clickStudentAdd, setClickStudentAdd] = useState(false);
+  const [roomNumber, setRoomNumber] = useState("");
 
-  const getFloorInfo = async (number) => {
-    const URL = URLdataBase + "/" + number;
-    const response = await fetch(URL).then((response) => response.json());
-
-    setFloor(response.rooms);
+  const getApiData = async (number) => {
+    const response = await fetch(URLdataBase + number, {
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    });
+    const json = await response.json();
+    setFloor(json);
+    return json;
   };
 
   useEffect(() => {
-    getFloorInfo(numFloor, setFloor);
-  }, [numFloor]);
+    getApiData(numFloor);
+  }, []);
+
+  const VisibleFloor = () => {
+    if (floor) {
+      return floor.rooms.map((room) => (
+        <div className={styles.room} key={room.number}>
+          <div className={styles.about_room}>
+            <div className={styles.wrapper_num_room}>
+              <Link className={styles.num_room}>{room.number}</Link>
+            </div>
+            <p className={styles.room_maxCount}>
+              Комната на {room.maxCountStudent} человека
+            </p>
+          </div>
+
+          <div className={styles.students}>
+            <button
+              className={
+                room.students.length === room.maxCountStudent
+                  ? styles.add_student_none
+                  : styles.add_student
+              }
+              onClick={() => {
+                setRoomNumber(room.number);
+                setClickStudentAdd(!clickStudentAdd);
+              }}
+            >
+              <FaUserPlus />
+            </button>
+            {room.students.length === room.maxCountStudent ? (
+              room.students.map((student, index) => (
+                <Link
+                  to={"/managmentStudents/student/" + student.studentId}
+                  title={student.firstname + " " + student.lastname}
+                  className={styles.student}
+                  key={student.studentId}
+                >
+                  {student.photo ? (
+                    <img
+                      id="user_photo"
+                      className={styles.student_photo}
+                      src={`data:image/jpeg;base64, ${student.photo.data}`}
+                      alt="Фото профиля студента"
+                    />
+                  ) : (
+                    <img
+                      className={styles.student_photo}
+                      src="/images/myAccount/userPhoto.png"
+                      alt="Базовое фото профиля"
+                    />
+                  )}
+                  {student.firstname + " " + student.lastname}
+                </Link>
+              ))
+            ) : room.maxCountStudent - room.students.length > 0 ? (
+              room.students.map((student, index) => (
+                <Link
+                  to={"/managmentStudents/student/" + student.studentId}
+                  title={student.firstname + " " + student.lastname}
+                  className={styles.student}
+                  key={student.studentId}
+                >
+                  {student.photo ? (
+                    <img
+                      id="user_photo"
+                      className={styles.student_photo}
+                      src={`data:image/jpeg;base64, ${student.photo.data}`}
+                      alt="Фото профиля студента"
+                    />
+                  ) : (
+                    <img
+                      className={styles.student_photo}
+                      src="/images/myAccount/userPhoto.png"
+                      alt="Базовое фото профиля"
+                    />
+                  )}
+                  {student.firstname + " " + student.lastname}
+                </Link>
+              ))
+            ) : (
+              <p>Ошибка</p>
+            )}
+          </div>
+        </div>
+      ));
+    }
+  };
 
   return (
     <div className={styles.wrapper_floor}>
-      <h1>Выбор комнаты:</h1>
+      <h3 className={styles.page_title}>Комнаты: {numFloor}-го этажа</h3>
       <div className={styles.wrapper_rooms}>
-        {floor.map((room) => {
-          for (let key in room) {
-            return (
-              <div className={styles.room} key={room[key].number}>
-                <div className={styles.about_room}>
-                  <div className={styles.wrapper_num_room}>
-                    <p className={styles.num_room}>{room[key].number}</p>
-                  </div>
-                  <p className={styles.students_room}>
-                    Комната на {room[key].countStudent} человека
-                  </p>
-                </div>
-                <div className={styles.students}></div>
-                <Link to={`room/${room[key].number}`}>Перейти в комнату</Link>
-              </div>
-            );
-          }
-        })}
+        <VisibleFloor />
       </div>
+      {roomNumber ? (
+        <AddStudent
+          clickStudAdd={clickStudentAdd}
+          roomNumber={roomNumber}
+          setClickStudAdd={setClickStudentAdd}
+        />
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

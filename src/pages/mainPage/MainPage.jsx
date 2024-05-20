@@ -19,29 +19,31 @@ export const MainPage = () => {
         </div>
         <div className={styles.map}>
           <h3>Как пройти</h3>
-          <div className={styles.btn_slider}>
-            <button
-              className={studMap ? styles.btn_navMap_active : styles.btn_navMap}
-              onClick={() => {
-                setStudMap(true);
-                setKutuzMap(false);
-              }}
-            >
-              От М. Студенческая
-            </button>
-            <button
-              className={
-                kutuzMap ? styles.btn_navMap_active : styles.btn_navMap
-              }
-              onClick={() => {
-                setKutuzMap(true);
-                setStudMap(false);
-              }}
-            >
-              От М. Кутузовская
-            </button>
-          </div>
           <div className={styles.slider}>
+            <div className={styles.btn_slider}>
+              <button
+                className={
+                  studMap ? styles.btn_navMap_active : styles.btn_navMap
+                }
+                onClick={() => {
+                  setStudMap(true);
+                  setKutuzMap(false);
+                }}
+              >
+                От М. Студенческая
+              </button>
+              <button
+                className={
+                  kutuzMap ? styles.btn_navMap_active : styles.btn_navMap
+                }
+                onClick={() => {
+                  setKutuzMap(true);
+                  setStudMap(false);
+                }}
+              >
+                От М. Кутузовская
+              </button>
+            </div>
             <img
               className={
                 studMap ? styles.map_img_stud_left : styles.map_img_stud_ridth

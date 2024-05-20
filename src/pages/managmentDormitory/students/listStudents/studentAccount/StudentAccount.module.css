@@ -1,15 +1,10 @@
 .main_wrapper {
   display: flex;
   padding: 30px 30px;
-  margin-top: 110px;
-  margin-bottom: 70px;
+  padding-top: 120px;
   background-color: var(--light);
   color: var(--dark);
   justify-content: space-between;
-  @media (max-width: 1000px) {
-    flex-direction: column;
-    align-items: center;
-  }
 }
 
 #wrapper_section {
@@ -25,10 +20,7 @@
 }
 
 .profile {
-  width: 30%;
-  @media (max-width: 1000px) {
-    width: 90%;
-  }
+  width: 400px;
 }
 
 .img_section {
@@ -105,43 +97,15 @@
   }
 }
 
-.documents {
-  border: 1px solid var(--light);
-  width: 30%;
-  padding: 10px;
-  height: 400px;
-  text-align: center;
-  border-radius: 20px;
-  box-shadow: 10px 10px 23px -11px var(--brown);
-  background-color: var(--bright);
-
-  @media (max-width: 1000px) {
-    width: 90%;
-    margin: 20px 0 20px 0;
-  }
-}
-
-.input_field {
-  margin-left: 5px;
-  border: none;
-  background-color: transparent;
-  font-size: 1.1rem;
-  border-bottom: 1px solid var(--dark);
-  outline: none;
-  &:focus {
-    color: var(--dark);
-  }
-}
-
-.list_info {
+.list_inventory {
   margin-top: 10px;
   border-top: 1px solid var(--dark);
-}
-
-.error_msg {
-  color: red;
-}
-
-.error_msg_none {
-  display: none;
+  li {
+    list-style: none;
+    padding-top: 10px;
+    font-size: 1.2em;
+  }
+  li::before {
+    content: "✓";
+  }
 }

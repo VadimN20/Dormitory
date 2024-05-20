@@ -1,0 +1,41 @@
+.inventory {
+  width: 30%;
+  @media (max-width: 1000px) {
+    width: 90%;
+  }
+}
+
+#wrapper_section {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  text-align: center;
+  background-color: var(--bright);
+  border: 1px solid var(--dark);
+  border-radius: 20px;
+  box-shadow: 10px 10px 23px -11px var(--bright);
+  padding: 20px;
+}
+
+.inventory_section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.list_inventory {
+  margin-top: 10px;
+  border-top: 1px solid var(--dark);
+  li {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 10px;
+    font-size: 1.2em;
+    &:hover {
+      color: var(--bright);
+      background-color: var(--light);
+      border-radius: 10px;
+    }
+  }
+}

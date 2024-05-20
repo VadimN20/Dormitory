@@ -12,21 +12,9 @@ export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
-  const setWrapperVisNav = roleChange
-    ? styles.wrapper_nav
-    : styles.wrapper_nav_none;
-  const setWrapperVisEntry = roleChange
-    ? styles.wrapper_entry_none
-    : styles.wrapper_entry;
-  const setWrapperVisOut = roleChange
-    ? styles.wrapper_out
-    : styles.wrapper_out_none;
-
   const setLogOut = () => {
-    // delete axios.defaults.headers.common["Authorization"];
     localStorage.removeItem("token");
     localStorage.removeItem("role");
-    setRoleChange(null);
     navigate("/authorization", { replace: true });
   };
 
@@ -45,7 +33,9 @@ export const Header = () => {
         src="../../images/header/logo.png"
         alt="Логотип"
       />
-      <nav className={setWrapperVisNav}>
+      <nav
+        className={roleChange ? styles.wrapper_nav : styles.wrapper_nav_none}
+      >
         <div className={styles.navigation}>
           <NavLink
             className={({ isActive }) =>
@@ -69,16 +59,13 @@ export const Header = () => {
             }
             to={"payment"}
           >
-            Оплата
+            оплата
           </NavLink>
         </div>
       </nav>
-      <div className={setWrapperVisEntry}>
-        <Link className={styles.btn_in} to={"/authorization"}>
-          ВХОД
-        </Link>
-      </div>
-      <div className={setWrapperVisOut}>
+      <div
+        className={roleChange ? styles.wrapper_out : styles.wrapper_out_none}
+      >
         <button
           className={styles.btn_out}
           onClick={() => {
@@ -89,11 +76,18 @@ export const Header = () => {
           Выход
         </button>
       </div>
-      <div className={styles.burger}>
-        <div className={styles.display_none}>
-          <Link to={"/authorization"}>ВХОД</Link>
-        </div>
+      <div
+        className={
+          roleChange ? styles.wrapper_entry_none : styles.wrapper_entry
+        }
+      >
+        <Link className={styles.btn_out} to={"/authorization"}>
+          Вход
+        </Link>
+      </div>
+      <div className={role ? styles.burger : styles.display_none}>
         <button
+          className={styles.burger_btn}
           onClick={() => {
             setIsOpen(!isOpen);
           }}
@@ -105,16 +99,23 @@ export const Header = () => {
             isOpen ? styles.wrapperVisMobNav : styles.wrapperVisMobNav_none
           }
         >
-          <NavLink to={role === "ADMIN" ? "managmentFloors" : "myAccount"}>
+          <NavLink
+            className={styles.burger_item}
+            to={role === "ADMIN" ? "managmentFloors" : "myAccount"}
+          >
             {role === "ADMIN" ? "Управление общежитием" : "Мой аккаунт"}
           </NavLink>
           <NavLink
+            className={styles.burger_item}
             to={role === "ADMIN" ? "managmentStudents" : "notifications"}
           >
             {role === "ADMIN" ? "Студенты" : "Уведомления"}
           </NavLink>
-          <NavLink to={"payment"}>Оплата</NavLink>
+          <NavLink className={styles.burger_item} to={"payment"}>
+            Оплата
+          </NavLink>
           <button
+            className={styles.burger_out}
             onClick={() => {
               setLogOut();
               setLogOutClick(true);

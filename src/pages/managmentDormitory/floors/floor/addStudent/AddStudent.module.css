@@ -1,0 +1,49 @@
+.window_add_student_none {
+  display: none;
+}
+
+.window_add_student {
+  position: absolute;
+  z-index: 20;
+  top: 25%;
+  left: 25%;
+  height: 50%;
+  width: 50%;
+  padding: 10px;
+  font-size: 1.2em;
+  color: var(--bright);
+  background-color: var(--light);
+  border: 1px solid var(--dark);
+  border-radius: 25px;
+  box-shadow: 10px 10px 23px -11px var(--dark);
+}
+
+.list_student_add {
+  padding-top: 20px;
+  list-style: none;
+}
+
+.student_add {
+  margin: 5px;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid var(--dark);
+  background-color: var(--grey);
+  color: var(--dark);
+  font-size: 1.2em;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.photo_fio {
+  display: flex;
+  align-items: center;
+}
+
+.photo_student {
+  margin-right: 20px;
+  width: 30px;
+  border-radius: 50%;
+}

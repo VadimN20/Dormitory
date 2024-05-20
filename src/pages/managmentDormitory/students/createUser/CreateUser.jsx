@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useAuth } from "../../../../hooks/useAuth";
 
+import styles from "./CreateUser.module.css";
+
 export const CreateUser = () => {
   const { token } = useAuth();
   const [studentId, setStudentId] = useState("");
@@ -32,15 +34,17 @@ export const CreateUser = () => {
       body: JSON.stringify(data),
     };
 
-    fetch("http://localhost:8080/student/create", requestOptions)
-      //.then(response => response.json())
-      //.then(response => console.log(response));
-      .then((result) => console.log(result));
+    fetch("http://localhost:8080/student/create", requestOptions).then(
+      (result) => console.log(result)
+    );
   };
 
   return (
-    <form onSubmit={handleCreate}>
+    <form className={styles.form_create} onSubmit={handleCreate}>
+      <h3>Добавить студента</h3>
       <input
+        tabIndex={1}
+        className={styles.input_field}
         type="text"
         value={lastName}
         name="lastName"
@@ -49,6 +53,8 @@ export const CreateUser = () => {
         onChange={(e) => setLastName(e.target.value)}
       />
       <input
+        tabIndex={2}
+        className={styles.input_field}
         type="text"
         value={firstName}
         name="firstName"
@@ -57,6 +63,8 @@ export const CreateUser = () => {
         onChange={(e) => setFirstName(e.target.value)}
       />
       <input
+        tabIndex={3}
+        className={styles.input_field}
         type="text"
         value={middleName}
         name="middleName"
@@ -65,6 +73,8 @@ export const CreateUser = () => {
         onChange={(e) => setMiddleName(e.target.value)}
       />
       <input
+        tabIndex={4}
+        className={styles.input_field}
         type="text"
         value={studentId}
         name="studentId"
@@ -73,6 +83,8 @@ export const CreateUser = () => {
         onChange={(e) => setStudentId(e.target.value)}
       />
       <input
+        tabIndex={5}
+        className={styles.input_field}
         type="text"
         value={phone}
         name="phone"
@@ -81,6 +93,8 @@ export const CreateUser = () => {
         onChange={(e) => setPhone(e.target.value)}
       />
       <input
+        tabIndex={6}
+        className={styles.input_field}
         type="text"
         value={email}
         name="email"
@@ -88,12 +102,18 @@ export const CreateUser = () => {
         required
         onChange={(e) => setEmail(e.target.value)}
       />
-      <select name="gender" onChange={(e) => setGender(e.target.value)}>
+      <select
+        className={styles.input_field}
+        name="gender"
+        onChange={(e) => setGender(e.target.value)}
+      >
         <option value="MALE">Мужской</option>
         <option value="FEMALE">Женский</option>
       </select>
 
-      <button type="submit">Создать</button>
+      <button className={styles.btn_add_student} type="submit">
+        Создать
+      </button>
     </form>
   );
 };
